@@ -9,7 +9,7 @@ import { RootReducer } from '../../store'
 type Props = {
   produto: ProdutoType
 
-  // estaNosFavoritos: boolean
+  estaNosFavoritos: boolean
 }
 
 export const paraReal = (valor: number) =>
@@ -17,9 +17,9 @@ export const paraReal = (valor: number) =>
     valor
   )
 
-const ProdutoComponent = ({ produto }: Props) => {
+const ProdutoComponent = ({ produto, estaNosFavoritos }: Props) => {
   const dispatch = useDispatch()
-  const estaNosFavoritos = true
+
   return (
     <S.Produto>
       <S.Capa>
