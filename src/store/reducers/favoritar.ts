@@ -16,7 +16,8 @@ const FavoritosSlice = createSlice({
     favoritare: (state, action: PayloadAction<Produto>) => {
       const jogo = action.payload
       if (state.itens.find((p) => p.id === jogo.id)) {
-        alert('ITEM JA ADICIONADO')
+        const index = state.itens.indexOf(jogo)
+        state.itens.splice(index, 1)
       } else {
         state.itens.push(jogo)
       }
